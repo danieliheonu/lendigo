@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Hacker News</title>
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="{% url 'story-list' %}" style="text-decoration: none; font-weight: bold;">Home</a>
+            <form method="GET" action="{% url 'search' %}">
+              <input type="text" name="search" placeholder="Search..." />
+            </form>
+        </nav>
+    </header>
+    {% block content %} 
+    
+    
+    {% endblock %}
+
+  </body>
+</html>

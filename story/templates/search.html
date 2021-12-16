@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
+    <h3 class="search_result"><span class="search_value">{{ object_list.count }}</span> Results found</h3>
+    {{% for story in object_list %}
+        <div class="section">
+            <div class="section_title" style="padding:15px 5px; font-size:15px;">
+                <span>{{ story.title }}</span>
+            </div>
+            <div class="section_body" style="padding:10px 2px 10px 10px; overflow-wrap: anywhere;">
+                <a href="{{ story.url }}" target="_blank">{{ story.url }}</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
